@@ -1,0 +1,29 @@
+{
+  "name": "facebook-clone-application-backend",
+  "version": "1.0.0",
+  "description": "clone facebook backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelithaSri/Facebook-Clone-Application-Backend.git"
+  },
+  "keywords": [
+    "express",
+    "mongodb"
+  ],
+  "author": "HelithaSri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HelithaSri/Facebook-Clone-Application-Backend/issues"
+  },
+  "homepage": "https://github.com/HelithaSri/Facebook-Clone-Application-Backend#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  }
+}
