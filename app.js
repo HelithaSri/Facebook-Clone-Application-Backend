@@ -1,9 +1,23 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
+const users = require('./routes/users')
+
 const app = express()
 const port = 4000
 
-app.listen(port,()=>{
+const url = 'mongodb://localhost/express'
+
+mongoose.connect(url, {useNewUrlParser: true})
+const con = mongoose.connection
+
+con.on('open', () => {
+    console.log("MongoDB Connected")
+})
+
+app.use(express.json())
+app.use('/users', users)
+
+app.listen(port, () => {
     console.log(`app starting on ${port}`);
 })
