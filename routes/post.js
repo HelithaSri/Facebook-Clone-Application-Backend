@@ -56,12 +56,12 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req,res)=>{
+router.delete('/:id', async (req, res) => {
     try {
         const post = await Post.findById(req.params.id)
         const response = await post.remove()
         res.json(response)
-    }catch (err){
+    } catch (err) {
         res.send('Err : ' + err)
     }
 })
