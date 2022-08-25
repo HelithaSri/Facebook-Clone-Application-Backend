@@ -3,6 +3,7 @@ const app = express()
 const router = express.Router()
 
 const Users = require('../models/users.models')
+const User = require("../models/users.models");
 app.use(express.json())
 
 router.get('/', async (req, res) => {
@@ -69,6 +70,27 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
         res.send('Err : ' + err)
     }
+})
+
+router.post('/auth/login', async (req,res)=>{
+    const {email, password} = req.body
+    User.findOne({email},(err,user)=>{
+        if (err || !email){
+            // console.log("hi")
+            return res.send(err)
+        }
+
+        if (user === null){
+            return res.send("Please Check the username & Password")
+        }else {
+            // console.log(user.password)
+            if (password === user.password){
+                return res.send("Login")
+            }else {
+                return res.send("Please Check the username & Password")
+            }
+        }
+    })
 })
 
 module.exports = router
