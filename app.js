@@ -20,6 +20,7 @@ app.use(express.json())
 app.use('/users', users)
 app.use('/post', post)
 
+
 app.listen(port, () => {
     console.log(`app starting on ${port}`);
 })
